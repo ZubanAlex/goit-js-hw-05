@@ -1,6 +1,6 @@
 'use strict';
 class Storage {
-  constructor([...items]) {
+  constructor(items) {
     this.items = items;
   }
 
@@ -8,20 +8,11 @@ class Storage {
     return this.items;
   }
   addItem(item) {
-    for (let key of items) {
-      if (item !== key) {
-        items.push(item);
-        break;
-      }
-    }
+    items.push(item);
   }
 
   removeItem(item) {
-    for (let i = 0; i < items.length; i += 1) {
-      if (item === items[i]) {
-        items.splice(i, 1);
-      }
-    }
+    items.splice(items.indexOf(item), 1);
   }
 }
 
